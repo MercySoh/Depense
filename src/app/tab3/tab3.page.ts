@@ -20,14 +20,21 @@ export class Tab3Page {
     this.storage = await this.storage.create();
   }
   async saveData(key: string, value: number) {
-    var amount=0;
-     amount = await this.storage.get(key);
-     if(amount>0){
-     value=value+amount;
+    var expenditure =[];
+    const currentDate = new Date();
+     expenditure = await this.storage.get(key);
+     console.log(expenditure);
+     if(expenditure===null || expenditure===""){
+      var val=value + "*" +currentDate;
+      expenditure =[val];
      }
-    await this.storage.set(key, value);
-    console.log('Data saved!');
+     else{
+      expenditure.push(value + "*" +currentDate);
+     }
+    await this.storage.set(key, expenditure);
+    console.log('Data saved!' + value);
   }
+
 
   
 
