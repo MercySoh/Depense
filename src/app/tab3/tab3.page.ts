@@ -22,17 +22,24 @@ export class Tab3Page {
   async saveData(key: string, value: number) {
     var expenditure =[];
     const currentDate = new Date();
-     expenditure = await this.storage.get(key);
-     console.log(expenditure);
-     if(expenditure===null || expenditure===""){
+    expenditure = await this.storage.get(key);
+    console.log(expenditure);
+    
+    if(value > 0){
+      if(expenditure===null || expenditure===""){
       var val=value + "*" +currentDate;
       expenditure =[val];
-     }
-     else{
+      }
+      else{
       expenditure.push(value + "*" +currentDate);
-     }
-    await this.storage.set(key, expenditure);
-    console.log('Data saved!' + value);
+      }
+      await this.storage.set(key, expenditure);
+      console.log('Data saved!' + value);
+    }
+    else{
+
+      console.log('Data not saved! need to be greater than 0');
+    }
   }
 
 
