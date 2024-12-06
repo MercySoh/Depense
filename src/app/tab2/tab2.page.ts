@@ -9,7 +9,7 @@ import { InfiniteScrollCustomEvent } from '@ionic/angular';
 })
 export class Tab2Page {
 
-  constructor() {}
+constructor(private storage: Storage) {}
 
   pieChartData: any;
 
@@ -22,13 +22,14 @@ export class Tab2Page {
     this.pieChartData = {
       chartType: 'PieChart',
       dataTable: [
-        ['Languages', 'Percent'],
-        ['Ionic',     33],
-        ['Angular',      33],
-        ['JavaScript',  33]
+        ['Categories', 'Cost'],
+        ['Gas',     80],
+        ['Electric',      105],
+        ['Grocery',  50],
+		['Food',50]
       ],
       options: {
-      'title': 'Technologies',
+      'title': 'Expenses',
       'width': 400,
       'height': 300
       }
