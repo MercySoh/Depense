@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Storage } from '@ionic/storage-angular';
 import { InfiniteScrollCustomEvent } from '@ionic/angular';
 
 @Component({
@@ -49,7 +49,6 @@ private generateItems() {
       (ev as InfiniteScrollCustomEvent).target.complete();
     }, 500);
   }
-
 }
 
 
