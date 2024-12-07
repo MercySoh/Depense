@@ -27,11 +27,11 @@ export class Tab3Page {
     
     if(value > 0){
       if(expenditure===null || expenditure===""){
-      var val=value + "*" +currentDate;
-      expenditure = [val];
+        var val=value + "*" +currentDate;
+        expenditure = [val];
       }
       else{
-      expenditure.push(value + "*" +currentDate);
+        expenditure.push(value + "*" +currentDate);
       }
       await this.storage.set(key, expenditure);
       console.log('Data saved!' + value);

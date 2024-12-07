@@ -30,8 +30,8 @@ constructor(private storage: Storage) {}
   async useAngularLibrary() {
 
 	// Retrieve all keys in storage
-     const keys = await this.storage.keys();
-
+    const keys = await this.storage.keys();
+	console.log(keys);
 	// get value by key
 	 for (const key of keys) {
 		var totalExpenditure = 0;
@@ -44,7 +44,7 @@ constructor(private storage: Storage) {}
 		this.pieChartData.push([key, totalExpenditure])
 	 }
 
-	 console.log(this.pieChartData);
+	 console.log("pie chart" + this.pieChartData);
   }
 items = [];
 
