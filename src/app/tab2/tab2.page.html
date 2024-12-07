@@ -8,20 +8,23 @@
 
 <ion-content [fullscreen]="true">
     <div class="flex-center">
-        <google-chart [data]="pieChartData"></google-chart>
+        <google-chart [title]="title" [type]="type" [data]="pieChartData" [options]="options" [width]="width" [height]="height"></google-chart>
     </div>
 
-</ion-content>
-
-<ion-content>
     <div class="flex-center">
-        <ion-list>
+        <ion-list style="height: auto;">
             <ion-item *ngFor="let item of items; let index">
                 <ion-label>{{ item }}</ion-label>
             </ion-item>
         </ion-list>
-        <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
-            <ion-infinite-scroll-content></ion-infinite-scroll-content>
-        </ion-infinite-scroll>
+
+        <!-- <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+						<ion-infinite-scroll-content></ion-infinite-scroll-content>
+					</ion-infinite-scroll> -->
+
     </div>
 </ion-content>
+
+<!-- <ion-content class="list">
+
+</ion-content> -->

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
-import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { GoogleChartsModule } from 'angular-google-charts';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
@@ -15,7 +15,7 @@ import { Tab2PageRoutingModule } from './tab2-routing.module';
     FormsModule,
     ExploreContainerComponentModule,
     Tab2PageRoutingModule,
-    Ng2GoogleChartsModule
+    GoogleChartsModule,
   ],
   declarations: [Tab2Page]
 })

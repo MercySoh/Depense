@@ -28,7 +28,7 @@ export class Tab3Page {
     if(value > 0){
       if(expenditure===null || expenditure===""){
       var val=value + "*" +currentDate;
-      expenditure =[val];
+      expenditure = [val];
       }
       else{
       expenditure.push(value + "*" +currentDate);
