@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage-angular';
-import { InfiniteScrollCustomEvent } from '@ionic/angular';
-
 
 @Component({
   selector: 'app-tab2',
@@ -24,7 +22,7 @@ constructor(private storage: Storage) {}
 	// Connect to database	
 	this.storage = await this.storage.create();
     this.useAngularLibrary();
-	this.generateItems();
+	 this.listSpend();
   }
 
   async useAngularLibrary() {
@@ -46,23 +44,22 @@ constructor(private storage: Storage) {}
 
 	 console.log("pie chart" + this.pieChartData);
   }
-items = [];
 
-private generateItems() {
-    const count = this.items.length + 1;
-    for (let i = 0; i < 10; i++) {
-      this.items.push(`Item ${count + i}` as never);
-    }
-  }
+  spend: [string, { category: string, amount: number }][] = [];
+ async listSpend(){
 
-//   onIonInfinite(ev: InfiniteScrollCustomEvent) {
-//     this.generateItems();
-//     setTimeout(() => {
-//       (ev as InfiniteScrollCustomEvent).target.complete();
-//     }, 500);
-//   }
+	const keys = await this.storage.keys();
+	console.log(keys);
 
+	for (const key of keys) {
+		const spendItem = await this.storage.get(key);
+ 
+ 	for(const list of spendItem){
+		const details= list.substring(0, list.indexOf('*'));
+		this.spend.push([key, details])
 }
 
-
+}
+ }
+}
 

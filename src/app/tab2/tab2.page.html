@@ -13,18 +13,10 @@
 
     <div class="flex-center">
         <ion-list style="height: auto;">
-            <ion-item *ngFor="let item of items; let index">
-                <ion-label>{{ item }}</ion-label>
+            <ion-item *ngFor="let spend of spend; let index">
+                <ion-label>{{ spend }}</ion-label>
             </ion-item>
         </ion-list>
 
-        <!-- <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
-						<ion-infinite-scroll-content></ion-infinite-scroll-content>
-					</ion-infinite-scroll> -->
-
     </div>
 </ion-content>
-
-<!-- <ion-content class="list">
-
-</ion-content> -->
