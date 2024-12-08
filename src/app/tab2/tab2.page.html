@@ -9,14 +9,14 @@
 <ion-content [fullscreen]="true">
     <div class="flex-center">
         <google-chart [title]="title" [type]="type" [data]="pieChartData" [options]="options" [width]="width" [height]="height"></google-chart>
-    </div>
-
-    <div class="flex-center">
-        <ion-list style="height: auto;">
-            <ion-item *ngFor="let spend of spend; let index">
-                <ion-label>{{ spend }}</ion-label>
-            </ion-item>
-        </ion-list>
-
+        <div class="spend-list">
+            <ol class="spend-details">
+                <li *ngFor="let spendItem of spend">
+                    {{ spendItem[1].category }} | 
+                    {{ spendItem[1].amount | currency:'EUR' }} | 
+                    {{ spendItem[1].date | date:'medium' }}
+                </li>
+            </ol> 
+        </div>
     </div>
 </ion-content>
